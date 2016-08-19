@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDDDemo.InvoicingModule.Domain
+namespace DDDDemo.SharedKernel
 {
-    class Program
+    public class BaseAggragate
     {
-        static void Main(string[] args)
-        {
-        }
+        public int Id { get; set; }
     }
 }

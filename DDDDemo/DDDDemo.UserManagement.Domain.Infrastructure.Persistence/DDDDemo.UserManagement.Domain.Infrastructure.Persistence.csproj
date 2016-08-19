@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3403401B-15D1-4F69-AAD9-A1FCD3F60138}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDDemo.InvoicingModule.Domain</RootNamespace>
-    <AssemblyName>DDDDemo.InvoicingModule.Domain</AssemblyName>
+    <RootNamespace>DDDDemo.UserManagement.Domain.Infrastructure.Persistence</RootNamespace>
+    <AssemblyName>DDDDemo.UserManagement.Domain.Infrastructure.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,9 +41,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\DDDDemo.Persistence\DDDDemo.Persistence.csproj">
+      <Project>{bd2d2a15-a365-4bb9-bd6d-0c374e0342e2}</Project>
+      <Name>DDDDemo.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.SharedKernel\DDDDemo.SharedKernel.csproj">
+      <Project>{ad8b4ce1-b999-44dc-b1d5-fe28d72b3f57}</Project>
+      <Name>DDDDemo.SharedKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Domian\DDDDemo.UserManagement.Domain.csproj">
+      <Project>{d8a095e6-de4c-4b22-90ab-49e2322352da}</Project>
+      <Name>DDDDemo.UserManagement.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

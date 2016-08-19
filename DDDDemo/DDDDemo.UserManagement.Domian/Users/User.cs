@@ -8,9 +8,9 @@ using DDDDemo.Common.Exceptions;
 using DDDDemo.SharedKernel;
 using DDDDemo.UserManagement.Domian.Interfaces;
 
-namespace DDDDemo.UserManagement.Domian.User
+namespace DDDDemo.UserManagement.Domian.Users
 {
-    public class User
+    public class User : BaseAggragate
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

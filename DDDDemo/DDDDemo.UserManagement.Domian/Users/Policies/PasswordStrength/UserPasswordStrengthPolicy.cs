@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DDDDemo.UserManagement.Domian.Interfaces;
 
-namespace DDDDemo.UserManagement.Domian.User.Policies.PasswordStrength
+namespace DDDDemo.UserManagement.Domian.Users.Policies.PasswordStrength
 {
     public class UserPasswordStrengthPolicy : IPasswordStrengthPolicy
     {

@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8C055B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Common", "DDDDemo.Common\DDDDemo.Common.csproj", "{460CEC5B-18D2-4484-8FEA-E58832AEE231}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Domain.Infrastructure.Persistence", "DDDDemo.UserManagement.Domain.Infrastructure.Persistence\DDDDemo.UserManagement.Domain.Infrastructure.Persistence.csproj", "{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{460CEC5B-18D2-4484-8FEA-E58832AEE231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{460CEC5B-18D2-4484-8FEA-E58832AEE231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{460CEC5B-18D2-4484-8FEA-E58832AEE231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,5 +87,6 @@ Global
 		{435C8DF2-16D6-42E1-9FD1-779238483BEA} = {3FBADDA5-EEDA-4CF9-BB5E-AEE4E54EF889}
 		{AD8B4CE1-B999-44DC-B1D5-FE28D72B3F57} = {0F619ECA-BD59-4227-8606-BE228C43DDF7}
 		{460CEC5B-18D2-4484-8FEA-E58832AEE231} = {8C055BE9-CAA4-412B-955A-C5A4D254E121}
+		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80} = {A0650676-C2A6-446F-9EA2-24F47CF0A510}
 	EndGlobalSection
 EndGlobal

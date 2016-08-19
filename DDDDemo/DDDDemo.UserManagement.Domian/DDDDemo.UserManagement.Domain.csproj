@@ -44,10 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IPasswordStrengthPolicy.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Policies\PasswordStrength\AdminPasswordStrebgthPolicy.cs" />
-    <Compile Include="User\Policies\PasswordStrength\UserPasswordStrengthPolicy.cs" />
-    <Compile Include="User\User.cs" />
+    <Compile Include="Users\Policies\PasswordStrength\AdminPasswordStrengthPolicy.cs" />
+    <Compile Include="Users\Policies\PasswordStrength\UserPasswordStrengthPolicy.cs" />
+    <Compile Include="Users\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
