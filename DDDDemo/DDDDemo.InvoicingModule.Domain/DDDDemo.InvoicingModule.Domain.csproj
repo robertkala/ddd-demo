@@ -43,11 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">
+      <Project>{460cec5b-18d2-4484-8fea-e58832aee231}</Project>
+      <Name>DDDDemo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.SharedKernel\DDDDemo.SharedKernel.csproj">
+      <Project>{ad8b4ce1-b999-44dc-b1d5-fe28d72b3f57}</Project>
+      <Name>DDDDemo.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
