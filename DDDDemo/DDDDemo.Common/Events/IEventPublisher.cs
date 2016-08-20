@@ -8,6 +8,6 @@ namespace DDDDemo.Common.Events
 {
     public interface IEventPublisher
     {
-        void Publish<T>(T eventObject) where T : class;
+        void Publish<T>(T domainEvent) where T : IEvent;
     }
 }

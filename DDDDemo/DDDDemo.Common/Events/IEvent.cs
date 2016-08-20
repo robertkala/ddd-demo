@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDDDemo.SharedKernel
+namespace DDDDemo.Common.Events
 {
-    public class BaseAggragate
+    public interface IEvent
     {
-        public int? Id { get; set; }
     }
 }

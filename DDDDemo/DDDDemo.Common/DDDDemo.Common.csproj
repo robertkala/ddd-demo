@@ -46,14 +46,18 @@
   <ItemGroup>
     <Compile Include="Aspects\ExceptionHandlingAspect.cs" />
     <Compile Include="Aspects\LoggingAspect.cs" />
-    <Compile Include="Events\EventBrokerInProc.cs" />
-    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\EventListenerAttribute.cs" />
+    <Compile Include="Events\EventListenersAttribute.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventListener.cs" />
     <Compile Include="Events\IEventPublisher.cs" />
     <Compile Include="Events\IEventSubscriber.cs" />
+    <Compile Include="Events\SimpleEventPublisher.cs" />
     <Compile Include="Exceptions\DomainInvariantException.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />
     <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Operations\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

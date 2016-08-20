@@ -11,46 +11,17 @@ namespace DDDDemo.InvoicingModule.Domain.Users
 {
     public class User : BaseAggragate
     {
-        public User(int id, string firstName, string lastName, string city, string postalCode, string streetName, string streetNumber)
+        public User(int id, string firstName, string lastName, Address address)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
-            City = city;
-            PostalCode = postalCode;
-            StreetName = streetName;
-            StreetNumber = streetNumber;
+            Address = address;
+
         }
-
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-
-        public string City { get; private set; }
-        public string PostalCode { get; private set; }
-        public string StreetName { get; private set; }
-        public string StreetNumber { get; private set; }
-
-        public Address GetAddress()
-        {
-            return new Address
-            {
-                City = City,
-                PostalCode = PostalCode,
-                StreetName = StreetName,
-                StreetNumber = StreetNumber
-            };
-        }
-
-        public void UpdateAddress(Address newAddress)
-        {
-            if (!newAddress.AllFiledsAreFilled())
-                throw new DomainInvariantException("All fileds should be filled in!");
-
-            City = newAddress.City;
-            PostalCode = newAddress.PostalCode;
-            StreetName = newAddress.StreetName;
-            StreetNumber = newAddress.StreetNumber;
-        }
+        public string FirstName { get; }
+        public string LastName { get; }
+       
+        public Address Address { get; }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDDDemo.InvoicingModule.Application
+namespace DDDDemo.Common.Events
 {
-    public class Class1
+    [AttributeUsage(AttributeTargets.Class)]
+    public class EventListenersAttribute : Attribute
     {
+
     }
 }

@@ -4,34 +4,33 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using DDDDemo.Common.Exceptions;
 using DDDDemo.SharedKernel;
+using DDDDemo.SharedKernel.Interfaces;
 using DDDDemo.UserManagement.Domain.Interfaces;
 
 namespace DDDDemo.UserManagement.Domain.Users
 {
     public class User : BaseAggragate
     {
-        public User(int id, string firstName, string lastName, string password, string city, string postalCode, string streetName, string streetNumber)
+        public User(int? id, string firstName, string lastName, string password, Address address, Coordinates coordinates)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             Password = password;
-            City = city;
-            PostalCode = postalCode;
-            StreetName = streetName;
-            StreetNumber = streetNumber;
+            Address = address;
+            Coordinates = coordinates;
+
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
         public string Password { get; private set; }
 
-        public string City { get; private set; }
-        public string PostalCode { get; private set; }
-        public string StreetName { get; private set; }
-        public string StreetNumber { get; private set; }
+        public Address Address { get; private set; }
+        public Coordinates Coordinates { get; private set; }
 
         public void SetPassword(string password, IPasswordStrengthPolicy passwordStrengthPolicy)
         {
@@ -45,27 +44,11 @@ namespace DDDDemo.UserManagement.Domain.Users
             }
         }
 
-
-        public Address GetAddress()
+        public void SetNewAddress(Address address, IGeocodingService geocodingService)
         {
-            return new Address
-            {
-                City = City,
-                PostalCode = PostalCode,
-                StreetName = StreetName,
-                StreetNumber = StreetNumber
-            };
+            Address = address;
+            Coordinates = geocodingService.GetCoordinatesForLocation(Address);
         }
 
-        public void UpdateAddress(Address newAddress)
-        {
-            if (!newAddress.AllFiledsAreFilled())
-                throw new DomainInvariantException("All fileds should be filled in!");
-
-            City = newAddress.City;
-            PostalCode = newAddress.PostalCode;
-            StreetName = newAddress.StreetName;
-            StreetNumber = newAddress.StreetNumber;
-        }
     }
 }

@@ -16,8 +16,12 @@ namespace DDDDemo.Persistence
         public string PostalCode { get; set; }
         public string StreetName { get; set; }
         public string StreetNumber { get; set; }
+        public string Country { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
-        public DbUser(int id, string firstName, string lastName, string password, string city, string postalCode, string streetName, string streetNumber)
+        public DbUser(int id, string firstName, string lastName, string password, string city, string postalCode, string streetName,
+            string streetNumber, string country, double latitude, double longitude)
         {
             Id = id;
             FirstName = firstName;
@@ -27,6 +31,9 @@ namespace DDDDemo.Persistence
             PostalCode = postalCode;
             StreetName = streetName;
             StreetNumber = streetNumber;
+            Country = country;
+            Latitude = latitude;
+            Longitude = longitude;
         }
     }
 }

@@ -42,7 +42,17 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="BaseAggragate.cs" />
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="Events\UserCreatedEvent.cs" />
+    <Compile Include="GeocodingService.cs" />
+    <Compile Include="Interfaces\IGeocodingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">
+      <Project>{460cec5b-18d2-4484-8fea-e58832aee231}</Project>
+      <Name>DDDDemo.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

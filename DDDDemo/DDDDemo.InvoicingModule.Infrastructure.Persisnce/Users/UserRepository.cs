@@ -7,6 +7,7 @@ using DDDDemo.Common.Exceptions;
 using DDDDemo.InvoicingModule.Domain.Interfaces;
 using DDDDemo.InvoicingModule.Domain.Users;
 using DDDDemo.Persistence;
+using DDDDemo.SharedKernel;
 
 namespace DDDDemo.InvoicingModule.Infrastructure.Persistence.Users
 {
@@ -25,14 +26,12 @@ namespace DDDDemo.InvoicingModule.Infrastructure.Persistence.Users
 
             if (dbUser != null)
             {
+                var address = new Address(dbUser.City, dbUser.PostalCode, dbUser.StreetName, dbUser.StreetNumber, dbUser.Country);
                 return new User(
                     dbUser.Id,
                     dbUser.FirstName,
                     dbUser.LastName,
-                    dbUser.City,
-                    dbUser.PostalCode,
-                    dbUser.StreetName,
-                    dbUser.StreetNumber);
+                    address);
             }
             
             throw new EntityNotFoundException();

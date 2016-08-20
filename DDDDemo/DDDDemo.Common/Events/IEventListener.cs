@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace DDDDemo.Common.Events
 {
-    public interface IEventHandler
-    { }
+    public interface IEventListener
+    {
 
-    public interface IEventHandler<in TEvent> : IEventHandler where TEvent : class
+    }
+
+    public interface IEventListener<in TEvent> : IEventListener
     {
         void Handle(TEvent eventData);
     }
