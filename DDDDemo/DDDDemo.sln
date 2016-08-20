@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Appl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.InvoicingModule.Application", "DDDDemo.InvoicingModule.Application\DDDDemo.InvoicingModule.Application.csproj", "{8CBAB193-19A2-4CF1-9E93-37682E110E57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Domain.Tests", "DDDDemo.UserManagement.Domain.Tests\DDDDemo.UserManagement.Domain.Tests.csproj", "{9CB8A2E8-1728-4849-B920-CA97662ADDDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{8CBAB193-19A2-4CF1-9E93-37682E110E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CBAB193-19A2-4CF1-9E93-37682E110E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CBAB193-19A2-4CF1-9E93-37682E110E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CB8A2E8-1728-4849-B920-CA97662ADDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB8A2E8-1728-4849-B920-CA97662ADDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB8A2E8-1728-4849-B920-CA97662ADDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB8A2E8-1728-4849-B920-CA97662ADDDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,6 @@ Global
 		{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80} = {A0650676-C2A6-446F-9EA2-24F47CF0A510}
 		{809A4A96-FE04-4EF3-A5AA-963325CE132F} = {CB19761E-5C14-4340-9339-51CA690637FC}
 		{8CBAB193-19A2-4CF1-9E93-37682E110E57} = {22B13FD5-5F36-4605-BCD9-2A49B5ECA5B0}
+		{9CB8A2E8-1728-4849-B920-CA97662ADDDE} = {CB19761E-5C14-4340-9339-51CA690637FC}
 	EndGlobalSection
 EndGlobal

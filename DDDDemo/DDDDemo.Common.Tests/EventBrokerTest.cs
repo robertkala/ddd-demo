@@ -11,34 +11,50 @@ using NUnit.Framework;
 namespace DDDDemo.Common.Tests
 {
     [TestFixture]
-    public class EventBrokerTest
+    public class EventPublisherTest
     {
-        private readonly Func<Type, object> _substituteCreatorFunction = type => Substitute.For(new[] { type }, new object[] { });
 
         [Test]
         public void CheckIfEventIsSameTypeForPublishAndSubscribe()
         {
-            var objectsCreator = ObjectCreator.CreateNew(_substituteCreatorFunction);
-            var eventBroker = new EventBrokerInProc(objectsCreator.InstanceCreatorFunction);
+            var event1Listener = new Event1Listener();
+            var objectsCreator = ObjectsCreator.CreateNew();
+            var eventPublisher = new SimpleEventPublisher();
 
-            eventBroker.SubscribeHandler<IEventHandler<TestEvent1>>();
+            eventPublisher.Subscribe(event1Listener);
+
             var testEven1 = new TestEvent1(new Random().Next());
-            eventBroker.Publish(testEven1);
+
+            ((IEventPublisher) eventPublisher).Publish<TestEvent1>(testEven1);
 
             Assert.AreEqual(objectsCreator.CreatedInstances.Count, 1);
-            objectsCreator.CreatedInstances.Cast<IEventHandler<TestEvent1>>().Single().Received(1).Handle(testEven1);
         }
-        [Test]
-        public void CheckIfEventIsNotSameTypeForPublishAndSubscribe()
-        {
-            var objectsCreator = ObjectCreator.CreateNew(_substituteCreatorFunction);
-            var eventBroker = new EventBrokerInProc(objectsCreator.InstanceCreatorFunction);
+        //private readonly Func<Type, object> _substituteCreatorFunction = type => Substitute.For(new[] { type }, new object[] { });
 
-            eventBroker.SubscribeHandler<IEventHandler<TestEvent1>>();
-            var testEven2 = new TestEvent2(new Random().Next());
-            eventBroker.Publish(testEven2);
+        //[Test]
+        //public void CheckIfEventIsSameTypeForPublishAndSubscribe()
+        //{
+        //    var objectsCreator = ObjectCreator.CreateNew(_substituteCreatorFunction);
+        //    var eventBroker = new EventBrokerInProc(objectsCreator.InstanceCreatorFunction);
 
-            Assert.AreEqual(objectsCreator.CreatedInstances.Count, 0);
-        }
+        //    eventBroker.SubscribeHandler<IEventHandler<TestEvent1>>();
+        //    var testEven1 = new TestEvent1(new Random().Next());
+        //    eventBroker.Publish(testEven1);
+
+        //    Assert.AreEqual(objectsCreator.CreatedInstances.Count, 1);
+        //    objectsCreator.CreatedInstances.Cast<IEventHandler<TestEvent1>>().Single().Received(1).Handle(testEven1);
+        //}
+        //[Test]
+        //public void CheckIfEventIsNotSameTypeForPublishAndSubscribe()
+        //{
+        //    var objectsCreator = ObjectCreator.CreateNew(_substituteCreatorFunction);
+        //    var eventBroker = new EventBrokerInProc(objectsCreator.InstanceCreatorFunction);
+
+        //    eventBroker.SubscribeHandler<IEventHandler<TestEvent1>>();
+        //    var testEven2 = new TestEvent2(new Random().Next());
+        //    eventBroker.Publish(testEven2);
+
+        //    Assert.AreEqual(objectsCreator.CreatedInstances.Count, 0);
+        //}
     }
 }

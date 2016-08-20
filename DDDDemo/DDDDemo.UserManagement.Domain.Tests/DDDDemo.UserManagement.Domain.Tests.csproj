@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{505E4E24-3C1E-4DDA-A1E6-F091160601C7}</ProjectGuid>
+    <ProjectGuid>{9CB8A2E8-1728-4849-B920-CA97662ADDDE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDDemo.Common.Tests</RootNamespace>
-    <AssemblyName>DDDDemo.Common.Tests</AssemblyName>
+    <RootNamespace>DDDDemo.UserManagement.Domain.Tests</RootNamespace>
+    <AssemblyName>DDDDemo.UserManagement.Domain.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\NSubstitute.1.10.0.0\lib\net45\NSubstitute.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -48,10 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventBrokerTest.cs" />
-    <Compile Include="Helpers\Event1Listener.cs" />
-    <Compile Include="Helpers\Events.cs" />
-    <Compile Include="Helpers\ObjectsCreator.cs" />
+    <Compile Include="PasswordPolicyMock.cs" />
+    <Compile Include="UserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +55,22 @@
     <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">
       <Project>{460cec5b-18d2-4484-8fea-e58832aee231}</Project>
       <Name>DDDDemo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.Persistence\DDDDemo.Persistence.csproj">
+      <Project>{bd2d2a15-a365-4bb9-bd6d-0c374e0342e2}</Project>
+      <Name>DDDDemo.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.SharedKernel\DDDDemo.SharedKernel.csproj">
+      <Project>{ad8b4ce1-b999-44dc-b1d5-fe28d72b3f57}</Project>
+      <Name>DDDDemo.SharedKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Domain.Infrastructure.Persistence\DDDDemo.UserManagement.Infrastructure.Persistence.csproj">
+      <Project>{d47f129c-90b5-4e87-acec-8abc63f1cc80}</Project>
+      <Name>DDDDemo.UserManagement.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Domian\DDDDemo.UserManagement.Domain.csproj">
+      <Project>{d8a095e6-de4c-4b22-90ab-49e2322352da}</Project>
+      <Name>DDDDemo.UserManagement.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

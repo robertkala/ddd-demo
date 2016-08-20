@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DDDDemo.Common.Events;
 
 namespace DDDDemo.Common.Tests.Helpers
 {
-    public class Event
+    public class Event: IEvent
     {
         public int Id;
     }
