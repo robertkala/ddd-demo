@@ -8,7 +8,7 @@ using DDDDemo.Common.Logging;
 
 namespace DDDDemo.Common.Aspects
 {
-    public class LoggingAspect
+    public class LoggingAspect :IInterceptor
     {
         private readonly ILogger _logger;
 

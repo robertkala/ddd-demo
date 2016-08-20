@@ -30,10 +30,16 @@ namespace DDDDemo.ConsoleApplication.DIBootstrapper
             var container = new WindsorContainer();
 
             //Common
-            container.Register(Component.For<ILogger>().ImplementedBy<ConsoleLogger>());
+            container.Register(Component.For<Common.Logging.ILogger>().ImplementedBy<Common.Logging.ConsoleLogger>());
+            container.Register(Classes.FromAssemblyContaining<SimpleEventPublisher>()
+                       .Where(x => x == typeof(SimpleEventPublisher))
+                       .WithServiceAllInterfaces()
+                       .LifestyleSingleton());
 
             //Shared Kernel
             container.Register(Component.For<IGeocodingService>().ImplementedBy<GeocodingServiceMock>());
+
+
 
             // Register event component listeners
             // This line resolves IEventSubscriber
