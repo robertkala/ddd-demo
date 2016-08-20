@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDDDemo.UserManagement.Domian.Interfaces
+namespace DDDDemo.UserManagement.Domain.Interfaces
 {
     public interface IPasswordStrengthPolicy
     {

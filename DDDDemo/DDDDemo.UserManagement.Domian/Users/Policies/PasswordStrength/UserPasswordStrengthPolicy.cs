@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DDDDemo.UserManagement.Domian.Interfaces;
+using DDDDemo.UserManagement.Domain.Interfaces;
 
-namespace DDDDemo.UserManagement.Domian.Users.Policies.PasswordStrength
+namespace DDDDemo.UserManagement.Domain.Users.Policies.PasswordStrength
 {
     public class UserPasswordStrengthPolicy : IPasswordStrengthPolicy
     {

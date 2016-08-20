@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +51,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DIBootstrapper\Bootstrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">
+      <Project>{460cec5b-18d2-4484-8fea-e58832aee231}</Project>
+      <Name>DDDDemo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.InvoicingModule.Application\DDDDemo.InvoicingModule.Application.csproj">
+      <Project>{8cbab193-19a2-4cf1-9e93-37682e110e57}</Project>
+      <Name>DDDDemo.InvoicingModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.InvoicingModule.Domain\DDDDemo.InvoicingModule.Domain.csproj">
+      <Project>{3403401b-15d1-4f69-aad9-a1fcd3f60138}</Project>
+      <Name>DDDDemo.InvoicingModule.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.InvoicingModule.Infrastructure.Persisnce\DDDDemo.InvoicingModule.Infrastructure.Persistence.csproj">
+      <Project>{435c8df2-16d6-42e1-9fd1-779238483bea}</Project>
+      <Name>DDDDemo.InvoicingModule.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.Persistence\DDDDemo.Persistence.csproj">
+      <Project>{bd2d2a15-a365-4bb9-bd6d-0c374e0342e2}</Project>
+      <Name>DDDDemo.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.SharedKernel\DDDDemo.SharedKernel.csproj">
+      <Project>{ad8b4ce1-b999-44dc-b1d5-fe28d72b3f57}</Project>
+      <Name>DDDDemo.SharedKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Application\DDDDemo.UserManagement.Application.csproj">
+      <Project>{809a4a96-fe04-4ef3-a5aa-963325ce132f}</Project>
+      <Name>DDDDemo.UserManagement.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Domain.Infrastructure.Persistence\DDDDemo.UserManagement.Infrastructure.Persistence.csproj">
+      <Project>{d47f129c-90b5-4e87-acec-8abc63f1cc80}</Project>
+      <Name>DDDDemo.UserManagement.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.UserManagement.Domian\DDDDemo.UserManagement.Domain.csproj">
+      <Project>{d8a095e6-de4c-4b22-90ab-49e2322352da}</Project>
+      <Name>DDDDemo.UserManagement.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

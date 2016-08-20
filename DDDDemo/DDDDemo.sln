@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A0650676-C2A6-446F-9EA2-24F47CF0A510}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.InvoicingModule.Infrastructure.Persisnce", "DDDDemo.InvoicingModule.Infrastructure.Persisnce\DDDDemo.InvoicingModule.Infrastructure.Persisnce.csproj", "{435C8DF2-16D6-42E1-9FD1-779238483BEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.InvoicingModule.Infrastructure.Persistence", "DDDDemo.InvoicingModule.Infrastructure.Persisnce\DDDDemo.InvoicingModule.Infrastructure.Persistence.csproj", "{435C8DF2-16D6-42E1-9FD1-779238483BEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.SharedKernel", "DDDDemo.SharedKernel\DDDDemo.SharedKernel.csproj", "{AD8B4CE1-B999-44DC-B1D5-FE28D72B3F57}"
 EndProject
@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8C055B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Common", "DDDDemo.Common\DDDDemo.Common.csproj", "{460CEC5B-18D2-4484-8FEA-E58832AEE231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Domain.Infrastructure.Persistence", "DDDDemo.UserManagement.Domain.Infrastructure.Persistence\DDDDemo.UserManagement.Domain.Infrastructure.Persistence.csproj", "{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Infrastructure.Persistence", "DDDDemo.UserManagement.Domain.Infrastructure.Persistence\DDDDemo.UserManagement.Infrastructure.Persistence.csproj", "{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.UserManagement.Application", "DDDDemo.UserManagement.Application\DDDDemo.UserManagement.Application.csproj", "{809A4A96-FE04-4EF3-A5AA-963325CE132F}"
 EndProject

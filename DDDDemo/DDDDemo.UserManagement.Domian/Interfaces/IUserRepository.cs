@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DDDDemo.UserManagement.Domian.Users;
+using DDDDemo.UserManagement.Domain.Users;
 
-namespace DDDDemo.UserManagement.Domian.Interfaces
+namespace DDDDemo.UserManagement.Domain.Interfaces
 {
     public interface IUserRepository
     {

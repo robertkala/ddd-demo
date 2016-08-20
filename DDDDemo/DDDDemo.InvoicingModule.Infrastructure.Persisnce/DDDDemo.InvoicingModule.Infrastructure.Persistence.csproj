@@ -7,8 +7,8 @@
     <ProjectGuid>{435C8DF2-16D6-42E1-9FD1-779238483BEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDDemo.InvoicingModule.Infrastructure.Persisnce</RootNamespace>
-    <AssemblyName>DDDDemo.InvoicingModule.Infrastructure.Persisnce</AssemblyName>
+    <RootNamespace>DDDDemo.InvoicingModule.Infrastructure.Persistence</RootNamespace>
+    <AssemblyName>DDDDemo.InvoicingModule.Infrastructure.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRepository.cs" />
+    <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">

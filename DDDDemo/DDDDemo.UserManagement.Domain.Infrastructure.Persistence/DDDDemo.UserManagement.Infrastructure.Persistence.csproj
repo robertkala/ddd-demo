@@ -7,8 +7,8 @@
     <ProjectGuid>{D47F129C-90B5-4E87-ACEC-8ABC63F1CC80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDDemo.UserManagement.Domain.Infrastructure.Persistence</RootNamespace>
-    <AssemblyName>DDDDemo.UserManagement.Domain.Infrastructure.Persistence</AssemblyName>
+    <RootNamespace>DDDDemo.UserManagement.Infrastructure.Persistence</RootNamespace>
+    <AssemblyName>DDDDemo.UserManagement.Infrastructure.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

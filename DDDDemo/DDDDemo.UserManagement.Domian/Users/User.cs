@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DDDDemo.Common.Exceptions;
 using DDDDemo.SharedKernel;
-using DDDDemo.UserManagement.Domian.Interfaces;
+using DDDDemo.UserManagement.Domain.Interfaces;
 
-namespace DDDDemo.UserManagement.Domian.Users
+namespace DDDDemo.UserManagement.Domain.Users
 {
     public class User : BaseAggragate
     {
