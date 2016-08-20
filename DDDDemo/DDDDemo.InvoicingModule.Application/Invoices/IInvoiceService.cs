@@ -8,5 +8,6 @@ namespace DDDDemo.InvoicingModule.Application.Invoices
 {
     public interface IInvoiceService
     {
+        void GenerateInvoiceForRegisteredUser(int userId);
     }
 }

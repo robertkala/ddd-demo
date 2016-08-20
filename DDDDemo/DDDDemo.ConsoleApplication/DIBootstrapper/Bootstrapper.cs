@@ -14,6 +14,7 @@ using Castle.Windsor;
 using DDDDemo.Common.Aspects;
 using DDDDemo.Common.Events;
 using DDDDemo.ConsoleApplication.DIBootstrapper.Facilities;
+using DDDDemo.InvoicingModule.Application.Invoices;
 using DDDDemo.Persistence;
 using DDDDemo.SharedKernel;
 using DDDDemo.SharedKernel.Interfaces;
@@ -39,8 +40,6 @@ namespace DDDDemo.ConsoleApplication.DIBootstrapper
             //Shared Kernel
             container.Register(Component.For<IGeocodingService>().ImplementedBy<GeocodingServiceMock>());
 
-
-
             // Register event component listeners
             // This line resolves IEventSubscriber
             container.AddFacility<SubscribeEventListenerFacility>();
@@ -62,10 +61,15 @@ namespace DDDDemo.ConsoleApplication.DIBootstrapper
             container.Register(Component.For<InvoicingModule.Domain.Interfaces.IUserRepository>()
                 .ImplementedBy<InvoicingModule.Infrastructure.Persistence.Users.UserRepository>());
 
+            container.Register(Component.For<IInvoiceService>().ImplementedBy<InvoiceService>()
+                .Interceptors(
+                    InterceptorReference.ForType<LoggingAspect>(),
+                    InterceptorReference.ForType<ExceptionHandlingAspect>()).First);
 
             //DBMock
             container.Register(Component.For<DbContext>().LifeStyle.Singleton.Start());
 
+            //EventListeners
             RegisterEventListeners(container);
 
             return container;

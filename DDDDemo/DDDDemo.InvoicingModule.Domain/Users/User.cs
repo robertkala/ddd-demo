@@ -23,5 +23,10 @@ namespace DDDDemo.InvoicingModule.Domain.Users
         public string LastName { get; }
        
         public Address Address { get; }
+
+        public override string ToString()
+        {
+            return $"FirstName: {FirstName}, LastName: {LastName}, Address: {Address}";
+        }
     }
 }
