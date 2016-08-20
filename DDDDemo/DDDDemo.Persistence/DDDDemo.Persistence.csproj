@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DbContext.cs" />
     <Compile Include="DbUser.cs" />
+    <Compile Include="Helper\UserListExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

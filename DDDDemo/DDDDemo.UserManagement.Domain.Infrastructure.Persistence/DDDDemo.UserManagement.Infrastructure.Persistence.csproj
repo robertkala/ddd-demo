@@ -44,6 +44,10 @@
     <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Common\DDDDemo.Common.csproj">
+      <Project>{460cec5b-18d2-4484-8fea-e58832aee231}</Project>
+      <Name>DDDDemo.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DDDDemo.Persistence\DDDDemo.Persistence.csproj">
       <Project>{bd2d2a15-a365-4bb9-bd6d-0c374e0342e2}</Project>
       <Name>DDDDemo.Persistence</Name>

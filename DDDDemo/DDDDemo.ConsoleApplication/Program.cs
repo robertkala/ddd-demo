@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DDDDemo.ConsoleApplication.DIBootstraper;
+using DDDDemo.ConsoleApplication.DIBootstrapper;
 
 namespace DDDDemo.ConsoleApplication
 {

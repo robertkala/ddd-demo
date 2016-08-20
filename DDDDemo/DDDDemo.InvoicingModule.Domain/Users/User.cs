@@ -11,6 +11,17 @@ namespace DDDDemo.InvoicingModule.Domain.Users
 {
     public class User : BaseAggragate
     {
+        public User(int id, string firstName, string lastName, string city, string postalCode, string streetName, string streetNumber)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            City = city;
+            PostalCode = postalCode;
+            StreetName = streetName;
+            StreetNumber = streetNumber;
+        }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
 

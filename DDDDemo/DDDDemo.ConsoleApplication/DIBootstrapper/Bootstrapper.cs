@@ -10,7 +10,7 @@ using Castle.Windsor;
 using DDDDemo.Persistence;
 using Microsoft.Win32;
 
-namespace DDDDemo.ConsoleApplication.DIBootstraper
+namespace DDDDemo.ConsoleApplication.DIBootstrapper
 {
     public class Bootstrapper
     {
@@ -23,11 +23,13 @@ namespace DDDDemo.ConsoleApplication.DIBootstraper
 
 
             //UserManagement
-            container.Register(Component.For<UserManagement.Domain.Interfaces.IUserRepository>().ImplementedBy<UserManagement.Infrastructure.Persistence.Users.UserRepository>());
+            container.Register(Component.For<UserManagement.Domain.Interfaces.IUserRepository>().
+                ImplementedBy<UserManagement.Infrastructure.Persistence.Users.UserRepository>());
 
 
             //InvoicingModule
-            container.Register(Component.For<InvoicingModule.Domain.Interfaces.IUserRepository>().ImplementedBy<InvoicingModule.Infrastructure.Persistence.Users.UserRepository>());
+            container.Register(Component.For<InvoicingModule.Domain.Interfaces.IUserRepository>()
+                .ImplementedBy<InvoicingModule.Infrastructure.Persistence.Users.UserRepository>());
 
 
             //DBMock
