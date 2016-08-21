@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IPasswordStrengthPolicy.cs" />
+    <Compile Include="Interfaces\IPasswordStrengthPolicyProvider.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\PasswordStrengthPolicyProvider.cs" />
     <Compile Include="Users\Factories\UserFactory.cs" />
     <Compile Include="Users\Policies\PasswordStrength\AdminPasswordStrengthPolicy.cs" />
     <Compile Include="Users\Policies\PasswordStrength\UserPasswordStrengthPolicy.cs" />

@@ -9,6 +9,7 @@ using DDDDemo.Persistence;
 using DDDDemo.SharedKernel;
 using DDDDemo.SharedKernel.Interfaces;
 using DDDDemo.UserManagement.Domain.Interfaces;
+using DDDDemo.UserManagement.Domain.Providers;
 using DDDDemo.UserManagement.Domain.Users;
 using DDDDemo.UserManagement.Infrastructure.Persistence.Users;
 using NUnit.Framework;
@@ -19,14 +20,14 @@ namespace DDDDemo.UserManagement.Domain.Tests
     public class UserTest
     {
         private IUserRepository _userRepository;
-        private IPasswordStrengthPolicy _passwordStrengthPolicy;
+        private IPasswordStrengthPolicyProvider _passwordStrengthPolicyProvider;
         private IGeocodingService _geocodingService;
         [SetUp]
         public void Init()
         {
             var dbContext = new DbContext();
             _userRepository = new UserRepository(dbContext);
-            _passwordStrengthPolicy = new PasswordPolicyMock();
+            _passwordStrengthPolicyProvider = new PasswordStrengthPolicyProvider();
             _geocodingService = new GeocodingServiceMock();
         }
 
@@ -35,7 +36,7 @@ namespace DDDDemo.UserManagement.Domain.Tests
         {
             var user = _userRepository.Get(1);
             var password = "DlugieHaslo";
-            user.SetPassword(password, _passwordStrengthPolicy);
+            user.SetPassword(password, _passwordStrengthPolicyProvider.GetUserPolicy());
             Assert.AreEqual(user.Password, password);
         }
 
@@ -44,7 +45,7 @@ namespace DDDDemo.UserManagement.Domain.Tests
         {
             var user = _userRepository.Get(1);
             var password = "short";
-            Assert.Throws(typeof (SecurityException), () => user.SetPassword(password, _passwordStrengthPolicy));
+            Assert.Throws(typeof (SecurityException), () => user.SetPassword(password, _passwordStrengthPolicyProvider.GetUserPolicy()));
         }
 
         //Equality of value objects

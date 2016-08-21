@@ -15,10 +15,12 @@ namespace DDDDemo.UserManagement.Domain.Users.Factories
     public class UserFactory
     {
         private readonly IGeocodingService _geocodingService;
+        private readonly IPasswordStrengthPolicyProvider _passwordStrengthPolicyProvider;
 
-        public UserFactory(IGeocodingService geocodingService)
+        public UserFactory(IGeocodingService geocodingService, IPasswordStrengthPolicyProvider passwordStrengthPolicyProvider)
         {
             _geocodingService = geocodingService;
+            _passwordStrengthPolicyProvider = passwordStrengthPolicyProvider;
         }
 
         public User CreateUser(string firstName, string lastName, string password, string city, string postalCode, string streetName, string streetNumber, string country)
@@ -27,7 +29,7 @@ namespace DDDDemo.UserManagement.Domain.Users.Factories
 
             var coordinates = _geocodingService.GetCoordinatesForLocation(address);
 
-            IPasswordStrengthPolicy passwordStrengthPolicy = new UserPasswordStrengthPolicy();
+            var passwordStrengthPolicy = _passwordStrengthPolicyProvider.GetUserPolicy();
 
             if (!passwordStrengthPolicy.IsPasswordGoodEnough(password))
             {
@@ -44,7 +46,7 @@ namespace DDDDemo.UserManagement.Domain.Users.Factories
 
             var coordinates = _geocodingService.GetCoordinatesForLocation(address);
 
-            IPasswordStrengthPolicy passwordStrengthPolicy = new AdminPasswordStrengthPolicy();
+            var passwordStrengthPolicy = _passwordStrengthPolicyProvider.GetAdminPolicy();
 
             if (!passwordStrengthPolicy.IsPasswordGoodEnough(password))
             {

@@ -18,8 +18,6 @@ namespace DDDDemo.ConsoleApplication
             var userService = container.Resolve<IUserService>();
             var listener = container.Resolve<IEventListener<UserCreatedEvent>>();
 
-            
-
             //fail request - password is too weak
             var failRequest = new UserCreationRequest()
             {

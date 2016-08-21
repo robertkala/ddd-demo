@@ -19,6 +19,8 @@ using DDDDemo.Persistence;
 using DDDDemo.SharedKernel;
 using DDDDemo.SharedKernel.Interfaces;
 using DDDDemo.UserManagement.Application.Users;
+using DDDDemo.UserManagement.Domain.Interfaces;
+using DDDDemo.UserManagement.Domain.Providers;
 using DDDDemo.UserManagement.Domain.Users.Factories;
 using Microsoft.Win32;
 
@@ -51,7 +53,7 @@ namespace DDDDemo.ConsoleApplication.DIBootstrapper
             container.Register(Component.For<UserManagement.Domain.Interfaces.IUserRepository>().
                 ImplementedBy<UserManagement.Infrastructure.Persistence.Users.UserRepository>());
             container.Register(Component.For<UserFactory>());
-
+            container.Register(Component.For<IPasswordStrengthPolicyProvider>().ImplementedBy<PasswordStrengthPolicyProvider>());
             container.Register(Component.For<IUserService>().ImplementedBy<UserService>()
                 .Interceptors(
                     InterceptorReference.ForType<LoggingAspect>(),
