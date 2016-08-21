@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DDDDemo.Common.Logging;
+using DDDDemo.Common.Operations;
 using DDDDemo.InvoicingModule.Domain.Interfaces;
 
 namespace DDDDemo.InvoicingModule.Application.Invoices
@@ -19,10 +20,14 @@ namespace DDDDemo.InvoicingModule.Application.Invoices
             _logger = logger;
         }
 
-        public void GenerateInvoiceForRegisteredUser(int userId)
+        public Response GenerateInvoiceForRegisteredUser(int userId)
         {
             var user = _userRepository.Get(userId);
             _logger.Info($"User get for invoice creation: {user.ToString()}");
+
+            //invoice creation logic
+
+            return Response.CreateSuccessfulResponse();
         }
     }
 }

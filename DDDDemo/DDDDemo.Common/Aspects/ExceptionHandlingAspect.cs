@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.DynamicProxy;
 using DDDDemo.Common.Logging;
+using DDDDemo.Common.Operations;
 
 namespace DDDDemo.Common.Aspects
 {
@@ -26,6 +27,7 @@ namespace DDDDemo.Common.Aspects
             catch (Exception exception)
             {
                 _logger.Error(exception);
+                invocation.ReturnValue = Response.CreateFailureResponse(exception.Message);
             }
         }
     }

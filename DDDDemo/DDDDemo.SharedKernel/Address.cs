@@ -55,7 +55,7 @@ namespace DDDDemo.SharedKernel
 
         public bool AllFiledsAreFilled()
             =>
-                !string.IsNullOrEmpty(City) && !string.IsNullOrEmpty(PostalCode) &&
+                !string.IsNullOrEmpty(Country) && !string.IsNullOrEmpty(City) && !string.IsNullOrEmpty(PostalCode) &&
                 !string.IsNullOrEmpty(StreetName) && !string.IsNullOrEmpty(StreetNumber);
 
         public override string ToString()

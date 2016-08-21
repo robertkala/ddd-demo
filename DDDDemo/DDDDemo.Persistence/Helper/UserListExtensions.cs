@@ -10,13 +10,12 @@ namespace DDDDemo.Persistence.Helper
     {
         public static int GetNewId(this List<DbUser> list)
         {
-            var newId = 1;
             var lastUser = list?.LastOrDefault();
             if (lastUser != null)
             {
                 return lastUser.Id + 1;
             }
-            return newId;
+            return 1;
         }
     }
 }
